@@ -1,0 +1,50 @@
+import { Entity } from '@loopback/repository';
+import { WithdrawUsedEquipment } from './withdraw-used-equipment.model';
+import { WithdrawMechanicalEquipment } from './withdraw-mechanical-equipment.model';
+import { WithdrawMoney } from './withdraw-money.model';
+import { EmployeeWorking } from './employee-working.model';
+import { SetupProcessPic } from './setup-process-pic.model';
+import { SetupCost } from './setup-cost.model';
+import { SetupFrabicProtect } from './setup-frabic-protect.model';
+import { SetupFcu } from './setup-fcu.model';
+import { SetupPipe } from './setup-pipe.model';
+import { SetupCdu } from './setup-cdu.model';
+import { PipeSysNElec } from './pipe-sys-n-elec.model';
+import { LeakTest } from './leak-test.model';
+import { VacummTest } from './vacumm-test.model';
+import { AddLiquid } from './add-liquid.model';
+export declare class OrderProduct extends Entity {
+    order_id: string;
+    brand: string;
+    type_inverter: string;
+    btu: number;
+    type_cdu: string;
+    type_fcu: string;
+    model: string;
+    appointment_date: string;
+    time_period: string;
+    type_of_work: string;
+    amount: string;
+    product: string;
+    state: number;
+    created_at?: string;
+    order_by: string;
+    withdrawUsedEquipments: WithdrawUsedEquipment[];
+    withdrawMechanicalEquipments: WithdrawMechanicalEquipment[];
+    withdrawMoney: WithdrawMoney;
+    employeeWorking: EmployeeWorking;
+    setupProcessPic: SetupProcessPic;
+    setupCost: SetupCost;
+    setupFrabicProtect: SetupFrabicProtect;
+    setupFcu: SetupFcu;
+    setupPipe: SetupPipe;
+    setupCdu: SetupCdu;
+    pipeSysNElec: PipeSysNElec;
+    leakTest: LeakTest;
+    vacummTest: VacummTest;
+    addLiquid: AddLiquid;
+    constructor(data?: Partial<OrderProduct>);
+}
+export interface OrderProductRelations {
+}
+export declare type OrderProductWithRelations = OrderProduct & OrderProductRelations;
